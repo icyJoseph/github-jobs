@@ -1,4 +1,7 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
+import { Col, Row } from "react-materialize";
+import { Listings } from "~/components/Listings";
+import { Search } from "~/components/Search";
 
 function App() {
   return (
@@ -6,6 +9,17 @@ function App() {
       <header>
         <h1>GitHub Jobs</h1>
       </header>
+      <main>
+        <Search />
+
+        <section>
+          <Row>
+            <Col s={12} m={6}>
+              <Listings />
+            </Col>
+          </Row>
+        </section>
+      </main>
     </Fragment>
   );
 }

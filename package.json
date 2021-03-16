@@ -7,9 +7,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@types/nprogress": "^0.2.0",
     "axios": "^0.21.1",
+    "html-react-parser": "^1.2.4",
+    "materialize-css": "^1.0.0-rc.2",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-materialize": "^3.9.7",
     "zustand": "^3.3.3"
   },
   "devDependencies": {
