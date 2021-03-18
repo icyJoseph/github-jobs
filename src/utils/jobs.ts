@@ -30,4 +30,5 @@ export type Position = {
   created_at: string;
 };
 
-export const jobs = axios.create({ baseURL: "https://jobs.github.com/" });
+export const baseURL = "https://jobs.github.com";
+export const jobs = axios.create({ baseURL });

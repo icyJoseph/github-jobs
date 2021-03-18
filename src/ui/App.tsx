@@ -3,7 +3,7 @@ import { Col, Row } from "react-materialize";
 import { Listings } from "~/components/Listings";
 import { Search } from "~/components/Search";
 
-function App() {
+export function App() {
   return (
     <Fragment>
       <header>

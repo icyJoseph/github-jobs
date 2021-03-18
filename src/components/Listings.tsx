@@ -1,9 +1,27 @@
 import { Fragment } from "react";
-import parse from "html-react-parser";
+import parse, { DOMNode } from "html-react-parser";
 import { Card, Icon } from "react-materialize";
 import { Element } from "domhandler/lib/node";
 
 import { useSearchPositions } from "~/hooks/useSearchPositions";
+
+const parseHowToApply = {
+  replace: (domNode: DOMNode) => {
+    if (domNode instanceof Element && domNode.attribs) {
+      if (domNode.name === "a") {
+        return (
+          <a
+            href={domNode.attribs.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact
+          </a>
+        );
+      }
+    }
+  }
+};
 
 export const Listings = () => {
   const positions = useSearchPositions((state) => state.positions);
@@ -23,23 +41,7 @@ export const Listings = () => {
           type,
           url
         }) => {
-          const apply = parse(how_to_apply, {
-            replace: (domNode) => {
-              if (domNode instanceof Element && domNode.attribs) {
-                if (domNode.name === "a") {
-                  return (
-                    <a
-                      href={domNode.attribs.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Contact
-                    </a>
-                  );
-                }
-              }
-            }
-          });
+          const apply = parse(how_to_apply, parseHowToApply);
 
           return (
             <li key={id}>

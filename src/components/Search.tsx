@@ -42,12 +42,18 @@ export const Search = () => {
         onSubmit={(e) => {
           e.preventDefault();
           const search = ref.current?.value.trim();
+
           if (search) {
             searchPositions({ search });
           }
         }}
       >
-        <input className="text-input" placeholder="search" ref={ref} />
+        <input
+          className="text-input"
+          placeholder="search"
+          ref={ref}
+          data-testid="search-input"
+        />
         <button type="submit">Search</button>
       </form>
     </Fragment>
