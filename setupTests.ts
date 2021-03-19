@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import { setupServer } from "msw/node";
 
-import { handlers } from "./src/mocks/handlers";
+import { handlers } from "./mocks/handlers";
 
 const server = setupServer(...handlers);
 
