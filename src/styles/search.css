@@ -1,0 +1,62 @@
+.form-group {
+  --buttonHeight: 2em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 1em;
+  width: 85%;
+  max-width: 514px;
+  font-size: 0.75em;
+  color: white;
+}
+
+.form-group input {
+  border: none;
+  text-align: center;
+  background: transparent;
+  color: inherit;
+  margin: 0 auto;
+  font-size: 2em;
+  border-bottom: 1px solid white;
+}
+
+.form-group button {
+  position: absolute;
+  width: auto;
+
+  display: flex;
+  align-items: center;
+
+  border: 0;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  font-size: inherit;
+  right: 0;
+  transform: translateX(200%);
+  opacity: 0;
+  height: var(--buttonHeight);
+  cursor: pointer;
+  transition: 1s 0.25s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group button:focus {
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #313131;
+}
+
+.form-group input:not(:placeholder-shown) ~ button {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.screen-reader {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

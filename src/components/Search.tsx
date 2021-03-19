@@ -1,7 +1,9 @@
 import { Fragment, useEffect, useRef } from "react";
 import nprogress from "nprogress";
+import { Button, TextInput } from "react-materialize";
 
 import { useSearchPositions } from "~/hooks/useSearchPositions";
+import "~/styles/search.css";
 
 export const Searching = () => {
   const [loading, error] = useSearchPositions((state) => [
@@ -39,6 +41,7 @@ export const Search = () => {
       <Searching />
 
       <form
+        className="form-group"
         onSubmit={(e) => {
           e.preventDefault();
           const search = ref.current?.value.trim();
@@ -48,13 +51,22 @@ export const Search = () => {
           }
         }}
       >
+        <label htmlFor="search-positions" className="screen-reader">
+          Job Description
+        </label>
+
         <input
-          className="text-input"
-          placeholder="search"
+          id="search-positions"
+          type="text"
           ref={ref}
+          placeholder="Search"
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck="false"
           data-testid="search-input"
-        />
-        <button type="submit">Search</button>
+        ></input>
+
+        <Button>Search</Button>
       </form>
     </Fragment>
   );
