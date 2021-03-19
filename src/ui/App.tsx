@@ -1,3 +1,4 @@
+import "materialize-css";
 import { Fragment } from "react";
 import { Col, Row } from "react-materialize";
 import { Listings } from "~/components/Listings";
@@ -7,14 +8,18 @@ export function App() {
   return (
     <Fragment>
       <header>
-        <h1>GitHub Jobs</h1>
+        <Row>
+          <Col>
+            <h1>GitHub Jobs</h1>
+          </Col>
+        </Row>
       </header>
       <main>
         <Search />
 
         <section>
           <Row>
-            <Col s={12} m={6}>
+            <Col offset="s2 m3" s={8} m={6}>
               <Listings />
             </Col>
           </Row>
